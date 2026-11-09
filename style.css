@@ -1,0 +1,618 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #98563f;
+    color: #171a22;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    width: 100%;
+    padding: 70px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background */
+
+.leaf {
+    position: fixed;
+    width: 260px;
+    height: 360px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    background: #321e17;
+    clip-path: polygon(50% 0, 80% 25%, 65% 45%, 100% 60%, 60% 65%, 50% 100%, 40% 65%, 0 60%, 35% 45%, 20% 25%);
+}
+
+.leaf-one {
+    top: -150px;
+    left: -100px;
+    transform: rotate(35deg);
+}
+
+.leaf-two {
+    bottom: -150px;
+    right: -100px;
+    transform: rotate(215deg);
+}
+
+/* Main container */
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1250px;
+    min-height: 730px;
+    margin: auto;
+    background: #e5d9c1;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(50, 25, 15, 0.12);
+}
+
+/* Navbar */
+
+.navbar {
+    height: 85px;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #171a22;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 27px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #24201c;
+    font-size: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #98563f;
+}
+
+.nav-links .login-btn {
+    background: #111318;
+    color: #fff;
+    padding: 10px 23px;
+    border-radius: 30px;
+}
+
+.nav-links .login-btn:hover {
+    background: #98563f;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 645px;
+    padding: 60px 65px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    width: 48%;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 65px;
+}
+
+.eyebrow,
+.section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #98563f;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    max-width: 420px;
+    color: #62584b;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 27px;
+}
+
+.learn-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 18px;
+    border: 1px solid #28231e;
+    border-radius: 30px;
+    color: #171a22;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.learn-btn:hover {
+    background: #171a22;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.learn-btn span {
+    font-size: 17px;
+}
+
+/* Hero animal composition */
+
+.hero-art {
+    width: 57%;
+    height: 600px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.dog-image {
+    position: absolute;
+    width: 78%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.cat-image {
+    position: absolute;
+    width: 34%;
+    height: 43%;
+    object-fit: contain;
+    object-position: bottom;
+    left: 5%;
+    bottom: 0;
+    z-index: 3;
+}
+
+.flower {
+    position: absolute;
+    color: #9a8062;
+    opacity: 0.7;
+    font-size: 55px;
+    z-index: 1;
+}
+
+.flower-one {
+    bottom: 70px;
+    left: 2%;
+}
+
+.flower-two {
+    bottom: 160px;
+    left: 27%;
+    font-size: 35px;
+}
+
+.flower-three {
+    top: 100px;
+    right: 5%;
+    font-size: 35px;
+}
+
+/* Adoption process */
+
+.process-section {
+    max-width: 1150px;
+    margin: 100px auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.process-section h2,
+.pets-section h2,
+.contact-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 4vw, 43px);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #f0dfd1;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.process-card {
+    background: #e9ddc8;
+    padding: 30px 22px;
+    border-radius: 16px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.process-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(40, 20, 10, 0.15);
+}
+
+.step-number {
+    display: block;
+    color: #98563f;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.process-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6d6256;
+}
+
+/* Featured pets */
+
+.pets-section {
+    max-width: 1150px;
+    margin: 100px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.pets-section .section-label {
+    margin-bottom: 10px;
+}
+
+.view-link {
+    color: #f5e7d5;
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.pet-card {
+    background: #e9ddc8;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.pet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(40, 20, 10, 0.15);
+}
+
+.pet-photo {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pet-dog {
+    background-image: url("https://images.unsplash.com/photo-1552053831-71594a27632d?w=700");
+}
+
+.pet-cat {
+    background-image: url("https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=700");
+}
+
+.pet-rabbit {
+    background-image: url("https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=700");
+}
+
+.pet-info {
+    padding: 22px;
+}
+
+.pet-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.pet-info p {
+    color: #766757;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.pet-info span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #55754a;
+}
+
+/* Contact */
+
+.contact-section {
+    max-width: 1150px;
+    margin: 100px auto;
+    padding: 70px 30px;
+    background: #e9ddc8;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section p {
+    color: #766757;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: #171a22;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #98563f;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #f4e3d4;
+    padding: 35px 15px;
+}
+
+.footer-logo {
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer p {
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.footer span {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .page-wrapper {
+        padding: 35px 4%;
+    }
+
+    .hero-container {
+        min-height: 650px;
+    }
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 40px 35px 0;
+        min-height: 565px;
+    }
+
+    .hero-art {
+        height: 490px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .page-wrapper {
+        padding: 20px 12px;
+    }
+
+    .hero-container {
+        border-radius: 20px;
+        min-height: 780px;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 15px;
+        right: 15px;
+        padding: 20px;
+        background: #f0e5d1;
+        border-radius: 14px;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-links .login-btn {
+        text-align: center;
+    }
+
+    .hero {
+        display: block;
+        padding: 45px 25px 0;
+        min-height: 710px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .hero-art {
+        width: 100%;
+        height: 350px;
+    }
+
+    .dog-image {
+        width: 85%;
+    }
+
+    .cat-image {
+        width: 38%;
+    }
+
+    .process-section,
+    .pets-section,
+    .contact-section {
+        margin: 65px auto;
+    }
+
+    .process-grid,
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .process-card {
+        padding: 25px;
+    }
+
+    .pet-photo {
+        height: 250px;
+    }
+}
+.hero-art {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 59%;
+    height: 100%;
+}
+
+.hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+}
